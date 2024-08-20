@@ -1,0 +1,84 @@
+<el-select v-model="jianCheng" multiple collapse-tags collapse-tags-tooltip placeholder="请选择" 
+style="width: 240px">
+<el-option v-for="item in selectDataStore.accountName" :key="item.value" :label="item.label" :value="item.value" />
+</el-select>
+
+<el-table :data="tableData" border class="table" 
+        :row-style="{ fontSize: '14px', height: '45px', padding: '10px' }">
+        <el-table-column align="center" prop="账户名称" label="账户名称" width="100" />
+  
+        
+        <el-table-column align="center" prop="账户简称" label="账户简称" width="100" />
+        <!-- <el-table-column align="center" prop="原始余额" label="原始余额" width="auto" />
+        <el-table-column align="center" prop="币种" label="币种" width="auto" />
+        <el-table-column align="center" prop="汇率" label="汇率" width="auto" />
+        <el-table-column align="center" prop="汇率月份" label="汇率月份" width="auto" /> -->
+        <el-table-column align="center" prop="期初余额" label="银行余额" width="100">
+          <template #header>
+            <span>期初余额&nbsp;</span>
+            <span>(人民币)</span>
+          </template>
+        </el-table-column>
+        <el-table-column align="center" prop="理财" label="理财" width="100" />
+        <el-table-column align="center" prop="贷款" label="贷款" width="100" />
+        <el-table-column align="center" prop="合计" label="合计" width="100" />
+      </el-table>
+
+      let getData = async () => {
+        console.log(jianCheng.value);
+        
+        let payLoad = reactive({
+          // accountName: jianCheng.value,
+          startInitialBalance: yuE1.value,
+          endInitialBalance: yuE2.value,
+          pageSize: pageSize.value,
+          pageNum: currentPage.value,
+        });
+        try {
+          const response = await biaoOne(payLoad);
+          const resArr = response.data.data.pageInfo.list;
+          tableData.splice(0, tableData.length); // 清空原有数据
+          resArr.forEach((item: { accountName: any; initialBalance: any; financialManagement: any; receipts: any; total: any; accountAbbreviation: any }) => {
+            tableData.push({
+              账户名称: item.accountName,
+              账户简称: item.accountAbbreviation,
+              期初余额: item.initialBalance,
+              理财: item.financialManagement,
+              贷款: item.receipts,
+              合计: item.total
+            });
+          });
+          total.value = response.data.data.total;
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      
+      };
+      let toExcel = async () => {
+        // console.log('toExcel');
+        let payLoad = reactive({
+          accountName: jianCheng.value,
+          startInitialBalance: yuE1.value,
+          endInitialBalance: yuE2.value,
+        });
+        excelOne(payLoad)
+          .then((res) => {
+            const url = window.URL.createObjectURL(new Blob([res.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            // // 设置下载的文件名，包括文件扩展名
+            link.setAttribute('download', '期初余额表.xlsx');
+            //将<a>元素添加到DOM树中（通常添加到document.body），然后模拟点击这个<a>元素，从而触发文件下载。
+            //下载完成后，<a>元素被从DOM中移除，以避免潜在的内存泄漏问题。
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            // 清理URL
+            window.URL.revokeObjectURL(url);
+          })
+          .catch((error) => {
+            // 失败时的处理逻辑
+            console.error('请求失败，错误信息为：', error);
+          });
+        // exportExcel('银行余额表', tableData);
+      };

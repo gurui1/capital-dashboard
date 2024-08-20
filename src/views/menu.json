@@ -1,0 +1,57 @@
+{
+    "menu": [
+        {
+            "title": "数据看板",
+            "index": "dataBoard|数据看板",
+            "icon": "Menu"
+        },
+        {
+            "title": "期初余额表",
+            "index": "Opening-Balance|期初余额表",
+            "icon": "Document"
+        },
+        {
+            "title": "预计期末余额表",
+            "index": "Closing-Balance|预计期末余额表",
+            "icon": "Document"
+        },
+      
+        {
+            "title": "预计支出表",
+            "index": "Expected-Expenditure|预计支出表",
+            "icon": "Document"
+        },
+        {
+            "title": "预计回款表",
+            "index": "Expected-Receipts|预计回款表",
+            "icon": "Document"
+        },         
+        {
+            "title": "实际支出表",
+            "index": "Actual-Expenditure|实际支出表",
+            "icon": "Document"
+        },
+        {
+            "title": "实际回款表",
+            "index": "Actual-Receipts|实际回款表",
+            "icon": "Document"
+        },
+        {
+            "title": "系统外预计收支表",
+            "index": "Other-Expenditure&Receipts|系统外预计收支表",
+            "icon": "Document"
+        }
+    ],
+    "urlParse":{
+        "dataBoard":"dataBoard|数据看板",
+        "Opening-Balance":"Opening-Balance|期初余额表",
+        "Closing-Balance":"Closing-Balance|预计期末余额表",
+        "Expected-Expenditure":"Expected-Expenditure|预计支出表",
+        "Expected-Receipts":"Expected-Receipts|预计回款表",
+        "Actual-Expenditure":"Actual-Expenditure|实际支出表",
+        "Actual-Receipts":"Actual-Receipts|实际回款表",
+        "Other-Expenditure&Receipts":"Other-Expenditure&Receipts|系统外预计收支表"
+
+    
+    }
+}

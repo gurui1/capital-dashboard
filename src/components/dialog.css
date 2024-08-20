@@ -1,0 +1,258 @@
+.modal {
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal-content {
+  margin: auto;
+  width: 74vw;
+}
+
+.Download {
+  /* width:5vw;
+    height:2vh; */
+  /* background-color: #81D3F8; */
+  font-size: 1.8vw;
+  border-radius: 3px;
+  position: relative;
+  letter-spacing: 10px;
+  text-decoration: none;
+  left: 30vw;
+  top: 1vh;
+  color: black;
+  /* top: -90vh; */
+}
+
+.xiazai {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  top: 1vh;
+  left: 0.5vw;
+
+}
+
+.Download:hover,
+.Download:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+.xiazai:hover,
+.xiazai:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close {
+  color: black;
+  float: right;
+  font-size: 7vh;
+  position: relative;
+  top: 1vh;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/deep/.el-dialog__title {
+  padding: none !important;
+}
+
+/deep/.dialog {
+  background-color: white;
+  width: 600px;
+  height: 640px;
+  border-radius: 10px 10px 0 0;
+  padding: 0 !important;
+
+  /* // height: 1000px; */
+  .dialog-title {
+    width: 600px;
+    height: 60px;
+    border-radius: 10px 10px 0 0;
+    background-color: #81D3F8;
+    position: relative;
+    top: -20px;
+    color: white;
+    font-size: 28px;
+
+    .wenzi {
+      position: relative;
+      left: -10vw;
+    }
+
+    .button {
+      position: relative;
+      font-size: 2vw;
+      left: 10vw;
+      top: 1vh;
+      cursor: pointer;
+      color: #92969d;
+    }
+
+    .button:hover {
+      color: aqua;
+      /* 设置鼠标移入时的颜色为蓝色 */
+    }
+
+  }
+
+  .dialog-body {
+    width: 600px;
+    height: 550px;
+    font-size: 16px;
+    font-weight: bold;
+    /* // background-color: green; */
+    position: relative;
+    top: -20px;
+
+    .dialog-body-one {
+      width: 600px;
+      height: 150px;
+
+      /* background-color: red; */
+      .label {
+        position: relative;
+        left: -40px;
+        top: 10px;
+      }
+    }
+
+    .dialog-body-two {
+      width: 600px;
+      height: 400px;
+      position: relative;
+      /* top:-5vh; */
+      /* background-color: #81D3F8; */
+
+      .label {
+
+        position: relative;
+        left: -220px;
+        top: 120px;
+
+      }
+
+      .png {
+        width: 320px;
+        height: 360px;
+        position: relative;
+        left: 36px;
+        top: -50px;
+        /* // background-color: yellow; */
+      }
+    }
+
+    .dialog-body-three {
+      position: relative;
+      width: 10vw;
+      top: -2.5vh;
+      left: 10vw;
+      display: inline-block;
+      display: flex;
+      font-size: 0.7vw;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 4vh;
+      color: white;
+
+      .one1 {
+        flex: 1;
+        background-color: #D9001B;
+        box-sizing: border-box;
+        border: 1px rgb(235, 228, 228) solid;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .two1 {
+        flex: 1;
+        background-color: #81D3F8;
+        border: 1px rgb(235, 228, 228) solid;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 2vw;
+        font-weight: bold;
+      }
+    }
+
+    .dialog-body-four {
+      position: relative;
+      width: 8vw;
+      top: 6vh;
+      left: 10.5vw;
+      font-size: 1vw;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 5vh;
+      color: white;
+      background-color: #81D3F8;
+      box-sizing: border-box;
+      border: 1px rgb(235, 228, 228) solid;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+
+
+    }
+
+    .dialog-body-five {
+      position: relative;
+      width: 5vw;
+      top: 12vh;
+      left: 12vw;
+      display: inline-block;
+      display: flex;
+      font-size: 0.7vw;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 4vh;
+      color: white;
+
+      .one1 {
+        flex: 1;
+        background-color: #D9001B;
+        box-sizing: border-box;
+        border: 1px rgb(235, 228, 228) solid;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+    }
+
+    .dialog-body-six {
+      position: relative;
+      width: 16vw;
+      top: 6vh;
+      left: 6.5vw;
+
+      font-size: 1vw;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 5vh;
+      color: white;
+      background-color: #D9001B;
+      box-sizing: border-box;
+      border: 1px rgb(235, 228, 228) solid;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+
+
+    }
+  }
+}
